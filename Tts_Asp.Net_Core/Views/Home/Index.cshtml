@@ -1,8 +1,270 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!doctype html>
+<html lang="en">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/Home/Home.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div class="navHome">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li style="float:left;"><a><i class="fa fa-phone"></i>Đường dây nóng hỗ trợ : 1900 54 54 81</a> </li>
+            <li><a href="#">about</a> </li>
+            <li><a href="#">about</a> </li>
+            <li><a href="#">about</a> </li>
+            <li><a href="#">about</a> </li>
+            <li><a href="#">about</a> </li>
+            <li>
+                <div class="search-nav">
+                    <i class="fa fa-search"></i>
+                    <input type="search" placeholder="Tìm kiếm" />
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <ul class="nav nav-pills" style="background:#FCB71E;">
+        <li class="nav-item dropdown" style="margin-left:5%;">
+            <a class="nav-link" style=" color:aliceblue;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tra cứu - Định vị <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-menu" style="background:rgba(128, 128, 128, 0.84)">
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-map-marker"></i>  Định vị bưu gửi</a>
+                <div class="dropdown-divider"></div>
+                <div class="search-nav">
+                    <i class="fa fa-search"></i>
+                    <input type="search" placeholder="Nhập mã bưu gửi" />
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-money"></i>  Định vị chuyển tiền</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-map-o"></i>  Mạng lưới bưu cục </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-ban"></i>  Hàng cấm gửi </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-search-plus"></i>  Tra cứu cước</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" style="color:#FCB71E;" href="#"><i class="fa fa-qrcode"></i>  Mã địa chỉ bưu chính </a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style=" color:aliceblue;" href="#">Bưu chính chuyển phát</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style=" color:aliceblue;" href="#">Tài chính bưu chính</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style=" color:aliceblue;" href="#">Phân phối - Truyền thống</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style=" color:aliceblue;" href="#">Tin tức</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style=" color:aliceblue;" href="#">Email</a>
+        </li>
+    </ul>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" style="height:400px;">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active" style="border-radius:100%; height:10px; width:10px;"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1" style="border-radius:100%; height:10px; width:10px;"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2" style="border-radius:100%; height:10px; width:10px;"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Image/wallpaper-4k-hinh-nen-4k-con-duong-rong-va-dai_101306477.jpg" class="d-block w-100 " style=" height:400px;" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div style="margin:50px 0;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 ">
+                <h5>CHUYÊN TRANG</h5>
+                <ul class="namdeptrai">
+                    <li>
+                        <a>
+                            <img src="~/Image/Recycle.png" alt="..." />
+                            <div>
+                                <b>Nói không với rác thải nhựa</b>
+                                <p>Bưu điện việt nam vì một cuộc sống xanh</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/newspaper.png" />
+                            <div>
+                                <b>Tổng hợp báo chí</b>
+                                <p>Tổng hợp báo chí ngành bưu điện</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+
+                            <img src="~/Image/quan-ly-chat-luong.png" />
+                            <div>
+                                <b>Quản lý chất lượng</b>
+                                <p>Văn bản quản lý chất lượng dịch vụ</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/stamp.png" />
+                            <div>
+                                <b>Tem bưu chính</b>
+                                <p>Văn bản quản lý tem bưu chính</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/thi-dua-khen-thuong.png" />
+                            <div>
+                                <b>Thi đua khen thưởng</b>
+                                <p>Tổng hợp thông tin thi đua khen thưởng</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/training.png" />
+                            <div>
+                                <b>Đào tạo</b>
+                                <p>Chương trình đào tạo cho nhân viên</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/folder.png" />
+                            <div>
+                                <b>Văn bản pháp lý</b>
+                                <p>Văn bản pháp lý và các thông tin liên quan</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/Icon-Dang.png" />
+                            <div>
+                                <b>Đại hội đảng</b>
+                                <p>Hướng tới Đại hội Đại biểu Đảng bộ TCT lần 2</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/list-top.png" />
+                            <div>
+                                <b>Thông tin doanh nghiệp</b>
+                                <p>Chuyên trang thông tin doanh nghiệp</p>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <h5>TIN TỨC</h5>
+                <div class="card" style="width:100% ; border:none;">
+                    <img src="~/Image/wallpaper-4k-hinh-nen-4k-con-duong-rong-va-dai_101306477.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p>2/2/2222</p>
+                        <p>NOI DUNG</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <h5>TIN TỨC KHÁC</h5>
+                <ul class="namdeptrai2">
+                    <li>
+                        <a>
+                            <img src="~/Image/Recycle.png" alt="..." />
+                            <div>
+                                <b>Nói không với rác thải nhựa</b>
+                                <p>Bưu điện việt nam vì một cuộc sống xanh</p>
+                            </div>
+                          
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/newspaper.png" />
+                            <div>
+                                <b>Tổng hợp báo chí</b>
+                                <p>Tổng hợp báo chí ngành bưu điện</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+
+                            <img src="~/Image/quan-ly-chat-luong.png" />
+                            <div>
+                                <b>Quản lý chất lượng</b>
+                                <p>Văn bản quản lý chất lượng dịch vụ</p>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <img src="~/Image/stamp.png" />
+                            <div>
+                                <b>Tem bưu chính</b>
+                                <p>Văn bản quản lý tem bưu chính</p>
+                            </div>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="~/Home/Home.js"></script>
+</body>
+
+
+</html>
+
+
+
