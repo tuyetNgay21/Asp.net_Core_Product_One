@@ -13,6 +13,53 @@ nav {
     z-index: 90;
 }
 
+.LogoAndSupport {
+    height: 70%;
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+}
+    .LogoAndSupport img {
+        height: 70%;
+        width: 40%
+    }
+
+.suppost_search {
+    height: 60%;
+    width: 60%;
+    display: flex;
+    float: left;
+    margin: 0 10%;
+}
+
+    .suppost_search li {
+        width: 100%;
+        margin: 0 1%;
+        height: 100%;
+        list-style: none;
+    }
+        .suppost_search li a {
+            width: 100%;
+            margin: 0 5%;
+            height: 100%;
+            list-style: none;
+            text-align: right;
+            text-decoration: none;
+            color:black;
+            cursor:pointer;
+
+        }
+            .suppost_search li a:hover {
+                color: #FCB71E;
+            }
+            .suppost_search li img {
+                height: auto;
+                width: 30%;
+                padding: 5px;
+                border: 2px solid #FCB71E;
+                border-radius: 100%;
+            }
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -120,12 +167,15 @@ nav {
         cursor: pointer;
         border-bottom: 1px solid black;
     }
-    .namdeptrai2 li:hover{
-       color:rgba(128, 128, 128, 0.16);
-    }
-        .namdeptrai li:hover {
+
+        .namdeptrai2 li:hover {
             color: rgba(128, 128, 128, 0.16);
         }
+
+.namdeptrai li:hover {
+    color: rgba(128, 128, 128, 0.16);
+}
+
 .namdeptrai2 li a img {
     height: 100px;
     width: 100px;
@@ -137,67 +187,176 @@ nav {
     float: left;
 }
 
-        .namdeptrai2 li a div {
-            width: 60%;
-            float: left;
-            text-align: center;
-        }
+.namdeptrai2 li a div {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
 
-        .namdeptrai2 li a p {
-            font-size: 11px;
-        }
+.namdeptrai2 li a p {
+    font-size: 11px;
+}
 
-        .namdeptrai2 li a i {
-            font-size: 25px;
-            text-align: center;
-            margin-top: 5%;
-        }
+.namdeptrai2 li a i {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 5%;
+}
+.meoDongBim{
+    margin:70px 0;
+    padding:0 10%;
+    width:100%;
+    height: auto;
+    background:rgba(128, 128, 128, 0.22);
 
+}
+.meoMeoMeo img{
+    border-radius:100%;
+    width:100%;
+    height:auto;
+    border:10px solid rgba(128, 128, 128, 0.83);
 
+}
+.card-title {
+    font-size: 30px;
+    border-bottom: 3px solid #FCB71E;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #FCB71E;
+}
+.card-body p a {
+    color: #FCB71E;
+    text-decoration: none;
+}
+    .card-body p a:hover {
+        color: black;
+        text-decoration: none;
+    }
+.guCuaAnh img{
+    width:100%;
+    height:auto;
+    margin:0 0px;
+    border:1px solid black;
+    padding:10px;
+}
+.guCuaAnh a{
+    color: #FCB71E;
+    text-decoration: none;
+    list-style: none;
+}
+.guCuaAnh p {
+    font-size:16px;
+}
+.guCuaAnh2 a {
+    color: #FCB71E;
+    text-decoration: none;
+    list-style: none;
+}
+
+.guCuaAnh2 p {
+    font-size: 16px;
+}
+.SupInformation {
+    width: 100%;
+    height: auto;
+    display:flex;
+
+}
+    .SupInformation a {
+        width: 30%;
+        height: auto;
+        position: relative;
+        margin-left: 5px;
+        list-style: none;
+    }
+.SupInformation img {
+    width: 100%;
+    height: auto;
+    margin: 0 0px;
+    border: 1px solid black;
+}
+.card-Footterr {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    padding: 30px 0;
+}
+.card-Footterr >p a{
+    color: black;
+    font-size: 13px;
+}
+    .card-Footterr > p a:hover {
+        color: white;
+        font-size: 13px;
+    }
+footer {
+    width: 100%;
+    height: 100px;
+    background: #144e8c;
+}
+.meo_Foot{
+    margin-left:5%;
+}
+.meo_Foot li {
+    width: 10%;
+    font-size: 30px;
+    height: auto;
+    position: relative;
+    margin-left: 5px;
+    margin-top: 30px;
+    list-style: none;
+    float: left;
+}
+.copyright{
+    font-size:13px;
+    text-align:center;
+    padding-top:20px;
+    color:aliceblue;
+}
 @media screen and (max-width:768px) {
     .line {
-        width: 30px;
-        height: 3px;
-        background: white;
-        margin: 5px;
-    }
-
-    nav {
-        position: relative;
-    }
-
-    .navHome {
-        position: absolute;
-        cursor: pointer;
-        right: 5%;
-        top: 30%;
-        transform: translate(-5%,-50%);
-        z-index: 100;
-    }
-
-    .nav-links {
-        position: fixed;
-        background: #ffd800;
-        height: 100vh;
-        width: 100%;
-        flex-direction: column;
-        clip-path: circle(100px at 90% -20%);
-        -webkit-clip-path: circle(100px at 90% -20%);
-        transition: all 1s ease-in-out;
-    }
-
-        .nav-links.open {
-            clip-path: circle(100px at 90% -20%);
-            -webkit-clip-path: circle(820px at 90% -20%);
+            width: 30px;
+            height: 3px;
+            background: black;
+            margin: 5px;
         }
 
-    .namdeptrai {
-        display: none;
-    }
-}
+        nav {
+            position: relative;
+        }
 
-@media screen and (max-width:1200px) {
-    .namdeptrai {
-        display: none;
+        .navHome {
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 30%;
+            transform: translate(-5%,-50%);
+            z-index: 100;
+        }
+
+        .nav-links {
+            position: fixed;
+            background: #ffd800;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            clip-path: circle(100px at 90% -20%);
+            -webkit-clip-path: circle(100px at 90% -20%);
+            transition: all 1s ease-in-out;
+        }
+
+            .nav-links.open {
+                clip-path: circle(100px at 90% -20%);
+                -webkit-clip-path: circle(820px at 90% -20%);
+            }
+
+        .namdeptrai {
+            display: none;
+        }
     }
-}
+
+    @media screen and (max-width:1200px) {
+        .namdeptrai {
+            display: none;
+        }
+    }
