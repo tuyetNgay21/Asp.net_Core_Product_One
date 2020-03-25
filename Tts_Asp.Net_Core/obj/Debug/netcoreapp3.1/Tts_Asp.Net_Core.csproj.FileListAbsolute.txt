@@ -133,3 +133,5 @@ F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\run
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Tts_Asp.Net_Core.MvcApplicationPartsAssemblyInfo.cache
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Views\Login\AddAccount.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Views\Login\_View_Layout.cshtml.g.cs

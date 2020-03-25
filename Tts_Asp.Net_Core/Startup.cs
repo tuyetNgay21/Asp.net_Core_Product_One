@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tts_Asp.Net_Core.Models.InterFace;
+using Tts_Asp.Net_Core.Models.Repository;
 
 namespace Tts_Asp.Net_Core
 {
@@ -25,6 +27,7 @@ namespace Tts_Asp.Net_Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<ILogin, RLogin>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

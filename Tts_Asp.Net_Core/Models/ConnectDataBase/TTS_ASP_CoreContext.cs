@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Tts_Asp.Net_Core.Models
+namespace Tts_Asp.Net_Core.Models.ConnectDataBase
 {
     public partial class TTS_ASP_CoreContext : DbContext
     {

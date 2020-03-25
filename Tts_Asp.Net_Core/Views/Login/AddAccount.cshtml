@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Tts_Asp.Net_Core.Models.ConnectDataBase
+@model IsLogin
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Login/_View_Layout.cshtml";
+}
+    <form asp-controller="Login" asp-action="AddAccount" class="LoginBox">
+        <h1>Đăng ký</h1>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="textBox">
+            <i class="fa fa-user"></i>
+            <input asp-for="Account" placeholder="Tài khoản của bạn">
+            <span asp-validation-for="Account" class="text-danger"></span>
+        </div>
+        <div class="textBox">
+            <i class="fa fa-lock"></i>
+            <input asp-for="Email" placeholder="Email của bạn">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="textBox">
+            <i class="fa fa-lock"></i>
+            <input asp-for="Passwork" placeholder="Mật khẩu của bạn">
+            <span asp-validation-for="Passwork" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btnn">Login</button>
+        <input type="submit" class="btnn" value="Cancel">
+    </form>
