@@ -7,7 +7,6 @@
 }
     <form asp-controller="Login" asp-action="AddAccount" class="LoginBox">
         <h1>Đăng ký</h1>
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="textBox">
             <i class="fa fa-user"></i>
             <input asp-for="Account" placeholder="Tài khoản của bạn">
@@ -24,5 +23,11 @@
             <span asp-validation-for="Passwork" class="text-danger"></span>
         </div>
         <button type="submit" class="btnn">Login</button>
-        <input type="submit" class="btnn" value="Cancel">
+        <a href="@Url.Action("Index","Login")"class="btnn" >Cancel</a>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     </form>
+    <div class="text-center LoadAddAccount" style="margin-top:10%; position:relative; display:none;">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
