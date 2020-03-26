@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Tts_Asp.Net_Core.Models.Check;
 using Tts_Asp.Net_Core.Models.ConnectDataBase;
 using Tts_Asp.Net_Core.Models.Repository;
+using Tts_Asp.Net_Core.Models.Session_Cookie;
 
 namespace Tts_Asp.Net_Core.Controllers
 {
@@ -13,7 +16,7 @@ namespace Tts_Asp.Net_Core.Controllers
     {
         [HttpGet]
         public IActionResult Index()
-        {          
+        {           
             return View();
         }
         public IActionResult AddAccount()
@@ -57,10 +60,18 @@ namespace Tts_Asp.Net_Core.Controllers
             }
             else if (ck==3)// nguoi dung
             {
+                SaveDataSession sessAccount = new SaveDataSession();
+                sessAccount.account = Ba.Account;
+                sessAccount.Quyen = Ba.Decentralization;
+                HttpContext.Session.SetString(Session.SessionNameLogin, JsonConvert.SerializeObject(sessAccount));
                 return RedirectToAction("Index", "Home");
             }
             else if (ck==4)// admin
             {
+                SaveDataSession sessAccount = new SaveDataSession();
+                sessAccount.account = Ba.Account;
+                sessAccount.Quyen = Ba.Decentralization;
+                HttpContext.Session.SetString(Session.SessionNameLogin, JsonConvert.SerializeObject(sessAccount));
                 return RedirectToAction("Index", "Home");
             }
             else //loi ky thuat
@@ -68,7 +79,6 @@ namespace Tts_Asp.Net_Core.Controllers
                 ModelState.AddModelError("", "Có biến rồi đại vương!!!");
                 return View();
             }
-            return View();
         }
 
     }

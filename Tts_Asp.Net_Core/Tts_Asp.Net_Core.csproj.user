@@ -11,5 +11,6 @@
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <WebStackScaffolding_DbContextTypeFullName>Tts_Asp.Net_Core.Models.ConnectDataBase.TTS_ASP_CoreContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_LayoutPageFile>~/Views/Login/_View_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
+    <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
 </Project>

@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Tts_Asp.Net_Core.Models.Session_Cookie
 {
-    
-    public class Session
+    public class SaveDataSession
     {
-        public static string SessionNameLogin="LoginAccount";        
+        public string account { get; set; }
+        public DateTime last = DateTime.Now;
+        public bool Quyen { get; set; }
     }
 }

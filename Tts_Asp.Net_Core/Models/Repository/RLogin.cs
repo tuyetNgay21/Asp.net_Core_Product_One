@@ -56,7 +56,7 @@ namespace Tts_Asp.Net_Core.Models.Repository
             {
                 throw new NotImplementedException();
             }
-        }
+        }        
         public void Remove(string Account)
         {
             throw new NotImplementedException();
