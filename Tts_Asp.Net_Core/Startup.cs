@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,10 +26,16 @@ namespace Tts_Asp.Net_Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDistributedMemoryCache();           // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
             services.AddSession(options =>
             {                                               // Đăng ký dịch vụ Session
                 options.IdleTimeout = new TimeSpan(3600);   // Thời gian tồn tại của Session
+            });
+            services.AddMvc(MvcOptions =>
+            {
+                MvcOptions.EnableEndpointRouting = false;
+
             });
             services.AddControllersWithViews();
             services.AddTransient<ILogin, RLogin>();
@@ -53,13 +60,24 @@ namespace Tts_Asp.Net_Core
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+                // Tối Ưu Hóa đường dẫn Cho SEO
+                var rewrite = new RewriteOptions()
+               .AddRewrite(@"Dang-Nhap-Vao-He-Thong", "Login/Index", skipRemainingRules: false)
+               .AddRewrite(@"admin", " admin/Home/Index", skipRemainingRules: false)
+               .AddRewrite(@"DangKy", "Login/AddAccount", skipRemainingRules: false);
+                app.UseRewriter(rewrite);
+                //Kết Thúc Tối Ưu Hóa Đường Dẫn cho SEO
+                routes.MapRoute(
+                   name: "default",
+                   template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                   name: "Admin",
+                   template: "{area=Admin}/{controller=Home}/{action=Index}/{id?}");
+                
+            });            
         }
     }
 }

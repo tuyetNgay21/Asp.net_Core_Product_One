@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "View";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/ckeditor/ckeditor.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <form id="question-form" method="post" class="form-group">
+                <div class="form-group">
+                    <label asp-for="Faq.Detail"></label>
+                    <textarea id="editor" asp-for="Faq.Detail" class="form-control Detail" rows="4" required>
+
+                          </textarea>
+                    <span id="DetailError" asp-validation-for="Faq.Detail" class="text-danger"></span>
+                </div>
+            </form>
+            <button class="btn btn-outline-success">XEM</button> <button class="btn btn-outline-success">Lưu</button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Admin/Admin.js"></script>

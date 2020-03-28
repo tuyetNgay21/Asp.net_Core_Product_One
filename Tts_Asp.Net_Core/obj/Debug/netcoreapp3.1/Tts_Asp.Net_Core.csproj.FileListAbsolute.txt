@@ -274,3 +274,6 @@ F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\run
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout_admin.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Account.cshtml.g.cs
