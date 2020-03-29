@@ -8,6 +8,13 @@ namespace Tts_Asp.Net_Core.Models.Session_Cookie
     
     public class Session
     {
-        public static string SessionNameLogin="LoginAccount";        
+        public static string SessionNameLogin="LoginAccount";
+        public static string SessionThret = "UserGoPage";
+       // public static string SessionNameLogin = "LoginAccount";
+        //public static string SessionNameLogin = "LoginAccount";
+       // public static string SessionNameLogin = "LoginAccount";
+       // public static string SessionNameLogin = "LoginAccount";
+        //public static string SessionNameLogin = "LoginAccount";
+        //public static string SessionNameLogin = "LoginAccount";
     }
 }

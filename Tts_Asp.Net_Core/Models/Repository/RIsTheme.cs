@@ -9,9 +9,30 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsTheme : IIsTheme
     {
+        private readonly TTS_ASP_CoreContext db;
+        public RIsTheme()
+        {
+            try
+            {
+                db = new TTS_ASP_CoreContext();
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
         public void Add(IsTheme _Th)
         {
-            throw new NotImplementedException();
+            try
+            {
+                db.IsTheme.Add(_Th);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+            }
         }
 
         public IsTheme GetIsTheme(string Account)
@@ -21,7 +42,15 @@ namespace Tts_Asp.Net_Core.Models.Repository
 
         public IEnumerable<IsTheme> GetIsThemes()
         {
-            throw new NotImplementedException();
+            try
+            {
+                IEnumerable<IsTheme> lg = db.IsTheme;
+                return lg;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void Remove(int id)

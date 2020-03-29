@@ -22,7 +22,7 @@ go
 create table IsTheme(
 					ThemeId int identity(1,1) primary key,
 					Isname nvarchar(50) not null,
-					IsTitle nvarchar(30) not null,
+					IsTitle nvarchar(50) not null,
 					AvatarTheme nvarchar(300) not null )
 					go
 create table IsSpecies(

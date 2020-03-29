@@ -259,7 +259,6 @@ F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Mic
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Tts_Asp.Net_Core.MvcApplicationPartsAssemblyInfo.cache
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
@@ -276,4 +275,6 @@ F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\run
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout_admin.cshtml.g.cs
-F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Account.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Port\AddPort.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Tts_Asp.Net_Core.MvcApplicationPartsAssemblyInfo.cache
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Theme\AddTheme.cshtml.g.cs

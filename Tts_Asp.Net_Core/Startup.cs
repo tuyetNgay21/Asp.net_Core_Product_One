@@ -59,25 +59,17 @@ namespace Tts_Asp.Net_Core
             app.UseSession();
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthorization();           
             app.UseMvc(routes =>
             {
-                // Tối Ưu Hóa đường dẫn Cho SEO
-                var rewrite = new RewriteOptions()
-               .AddRewrite(@"Dang-Nhap-Vao-He-Thong", "Login/Index", skipRemainingRules: false)
-               .AddRewrite(@"admin", " admin/Home/Index", skipRemainingRules: false)
-               .AddRewrite(@"DangKy", "Login/AddAccount", skipRemainingRules: false);
-                app.UseRewriter(rewrite);
-                //Kết Thúc Tối Ưu Hóa Đường Dẫn cho SEO
-                routes.MapRoute(
-                   name: "default",
-                   template: "{controller=Home}/{action=Index}/{id?}");
-
-                routes.MapRoute(
-                   name: "Admin",
-                   template: "{area=Admin}/{controller=Home}/{action=Index}/{id?}");
                 
-            });            
+                routes.MapRoute(
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                         name: "Admin",
+                         template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
