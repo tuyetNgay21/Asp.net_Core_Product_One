@@ -13,22 +13,40 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
     [Area("Admin")]
     public class ThemeController : Controller
     {
-        public static string  Meo="";
+        public static string Meo = "";
+        [Route("chu-de")]
+        public IActionResult ChuDe()
+        {
+            return View();
+        }
+
+        [Route("Them-chu-de")]
         public IActionResult AddTheme(IsTheme th)
         {
-           if(/*ModelState.IsValid*/ th.Isname== null || th.IsTitle==null ||th.AvatarTheme==null)
+            if (th.Isname == null || th.IsTitle == null || th.AvatarTheme == null)
             {
                 ViewBag.ImgUrl = Meo;
+                return View();
             }
             else
             {
                 RIsTheme r = new RIsTheme();
                 r.Add(th);
+                return Redirect("chu-de");
             }
-            
-            return View();
+        }
+        [Route("SuaChuDe")]
+        public IActionResult EdiTheme(IsTheme th)
+        {
+            if(ModelState.IsValid==false)
+            {
+                RIsTheme t = new RIsTheme();
+                t.Edit(th);
+            }     
+            return Redirect("chu-de");
         }
         [HttpPost]
+        [Route("TaiTheme")]
         public IActionResult ImageUpload(IFormFile file)
         {
             if (file != null && file.Length > 0)
@@ -53,12 +71,11 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
                 var file1 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Image", fileName);
                 file.CopyToAsync(new FileStream(file1, FileMode.Create));
                 Meo = "/Image/" + fileName;
-                return Redirect("AddTheme");
-
+                return Redirect("chu-de");
             }
             else
             {
-                return View("AddTheme");
+                return View("chu-de");
             }
         }
     }

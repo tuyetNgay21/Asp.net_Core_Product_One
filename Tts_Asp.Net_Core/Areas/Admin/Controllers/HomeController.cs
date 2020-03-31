@@ -12,7 +12,8 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public  class HomeController : Controller
-    {            
+    {    
+        [Route("AdminHome")]
         public IActionResult Index()
         {
            

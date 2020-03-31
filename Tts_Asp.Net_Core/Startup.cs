@@ -59,10 +59,10 @@ namespace Tts_Asp.Net_Core
             app.UseSession();
             app.UseRouting();
 
-            app.UseAuthorization();           
+            app.UseAuthorization();
             app.UseMvc(routes =>
             {
-                
+
                 routes.MapRoute(
                         name: "default",
                         template: "{controller=Home}/{action=Index}/{id?}");
@@ -70,6 +70,7 @@ namespace Tts_Asp.Net_Core
                          name: "Admin",
                          template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

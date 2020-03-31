@@ -11,6 +11,7 @@ namespace Tts_Asp.Net_Core.Models.InterFace
         IEnumerable<IsTheme> GetIsThemes();
         IsTheme GetIsTheme(string Account);
         void Add(IsTheme _Th);
+        void Edit(IsTheme _Th);
         void Remove(int id);
     }
 }

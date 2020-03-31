@@ -36,6 +36,7 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
                 uploaded = 1,
                 url = "Image/" + fileName
             });
-        }         
+        }   
+        
     }
 }
