@@ -8,9 +8,10 @@ namespace Tts_Asp.Net_Core.Models.InterFace
 {
    public interface IIsSpecies
     {
-        IEnumerable<IsPost> GetIsThemes();
-        IsPost GetIsTheme(string Account);
-        void Add(IsPost _Th);
+        IEnumerable<IsSpecies> GetIsThemes();
+        IsSpecies GetIsTheme(string Account);
+        void Add(IsSpecies _Th);
+        void Edit(IsSpecies _Th);
         void Remove(int id);
     }
 }

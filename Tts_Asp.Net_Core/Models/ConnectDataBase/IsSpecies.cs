@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace Tts_Asp.Net_Core.Models.ConnectDataBase
         {
             IsPost = new HashSet<IsPost>();
         }
-
+        [Key]
         public int SpeciesId { get; set; }
         public string Isname { get; set; }
         public string IsTitle { get; set; }

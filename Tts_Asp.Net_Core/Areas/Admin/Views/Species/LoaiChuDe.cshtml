@@ -1,0 +1,192 @@
+﻿@using Tts_Asp.Net_Core.Models.ConnectDataBase
+@model IsSpecies
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddTheme";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+}
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Thêm loại chủ đề</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Xem loại chủ đề</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Thao tac với loại chủ đề</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="ChuDeDangCo-tab" data-toggle="tab" href="#ChuDeDangCo" role="tab" aria-controls="ChuDeDangCo" aria-selected="false">Chủ đề đang có</a>
+        </li>
+    </ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="container">
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-10">
+                    <h4>Tải Ảnh Lên</h4>
+                    <form action="/TaiLoaiChuDe" method="post" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <input class="form-control" id="file" type="file" name="file" />
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-success">Tải Lên</button>
+                        </div>
+                    </form>
+                    <img src="@ViewBag.ImgUrlMeo" style="border-radius:100%;width:400px; z-index:20; height:auto; text-align:center;" />
+                    <br />
+                    <h4 style="margin-top:100px;">Thêm Loại  Chủ Đề</h4>
+                    <form action="/Them-Loai-chu-de">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Isname" class="control-label">Tên hiển thị của loại chủ đề</label>
+                            <input asp-for="Isname" class="form-control" />
+                            <span asp-validation-for="Isname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IsTitle" class="control-label">Tiêu đề của loại chủ đề</label>
+                            <input asp-for="IsTitle" class="form-control" />
+                            <span asp-validation-for="IsTitle" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="AvatarSpecies" class="control-label">Ảnh của Loại chủ đề</label>
+                            <input asp-for="AvatarSpecies" class="form-control" value="@ViewBag.ImgUrlMeo" readonly="readonly" />
+                            <span asp-validation-for="AvatarSpecies" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ThemeId" class="control-label">Mã chủ đề</label>
+                            <input asp-for="ThemeId" class="form-control" />
+                            <span asp-validation-for="ThemeId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Thêm Loại Chủ Đề" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a href="/AdminHome">Back to List</a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        @{
+            TTS_ASP_CoreContext db2 = new TTS_ASP_CoreContext();
+            var listTheme2 = db2.IsSpecies.ToList();
+
+        }
+        <div class="card">
+            <h5 class="card-header">
+                Loại Chủ Đề Đang có
+            </h5>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Loại Chủ đề</td>
+                            <td>Tiêu đề</td>
+                            <td>Ảnh</td>
+                            <td>Mã loại chủ đề</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var a2 in listTheme2)
+                        {
+                            <tr>
+                                <td id="MaLoaiChuDe-@a2.SpeciesId">@a2.SpeciesId</td>
+                                <td id="TenLoaiChuDe-@a2.SpeciesId">@a2.Isname</td>
+                                <td id="TieuDeLoaiChuDe-@a2.SpeciesId">@a2.IsTitle</td>
+                                <td><img id="AnhLoaiChuDe-@a2.SpeciesId" src="@a2.AvatarSpecies" height="50" width="50" /></td>
+                                <td id="MaChuDeLoai-@a2.SpeciesId">@a2.ThemeId</td>
+                                <td data-id="@a2.SpeciesId" class="LoaiExit"><a class="btn btn-success">Sửa</a></td>
+                                <td data-id="@a2.SpeciesId" class="LoaiDelete"><a class="btn btn-outline-warning">Xóa</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <h4 style="margin-top:100px;">Sửa Loại Chủ Đề</h4>
+        <form action="/Loai-SuaChuDe">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SpeciesId" class="control-label">Mã Loại chủ đề</label>
+                <input asp-for="SpeciesId" class="form-control" placeholder="MaTieude" id="MaTieuDe" readonly="readonly" />
+                <span asp-validation-for="SpeciesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Isname" class="control-label">Tên loại chủ đề</label>
+                <input asp-for="Isname" class="form-control" placeholder="Tên Tiêu Đề" id="TenTieuDe" />
+                <span asp-validation-for="Isname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsTitle" class="control-label">Tiêu đề loại chủ đề</label>
+                <input asp-for="IsTitle" class="form-control" value="" placeholder="Nội dung Tóm Tắt" id="NoiDungTieuDe" />
+                <span asp-validation-for="IsTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvatarSpecies" class="control-label">Ảnh loại chủ đề</label>
+                <input asp-for="AvatarSpecies" class="form-control" value="" placeholder="Ảnh chủ đề" id="AnhChuDe" readonly="readonly" />
+                <span asp-validation-for="AvatarSpecies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThemeId" class="control-label">Mã chủ đề</label>
+                <input asp-for="ThemeId" class="form-control" placeholder="MaTieude" id="MaChuDeCuaLoaiChude" />
+                <span asp-validation-for="ThemeId" class="text-danger"></span>
+            </div>
+            <img id="AnhTieuDe" src="" style="border-radius:100%;width:400px; z-index:20; height:auto; text-align:center;" />
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Sửa chủ đề" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="tab-pane fade" id="ChuDeDangCo" role="tabpanel" aria-labelledby="ChuDeDangCo-tab">
+        @{
+            TTS_ASP_CoreContext db = new TTS_ASP_CoreContext();
+            var listTheme = db.IsTheme.ToList();
+
+        }
+        <div class="card">
+            <h5 class="card-header">
+                Chủ Đề Đang có
+            </h5>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Chủ đề</td>
+                            <td>Tiêu đề</td>
+                            <td>Ảnh</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var a in listTheme)
+                        {
+                            <tr>
+                                <td id="MaChuDe-@a.ThemeId">@a.ThemeId</td>
+                                <td id="TenChuDe-@a.ThemeId">@a.Isname</td>
+                                <td id="TieuDeChuDe-@a.ThemeId">@a.IsTitle</td>
+                                <td><img id="AnhChuDe-@a.ThemeId" src="@a.AvatarTheme" height="50" width="50" /></td>
+                                <td data-id="@a.ThemeId" class="Exit"><a class="btn btn-success">Sửa</a></td>
+                                <td data-id="@a.ThemeId" class="Delete"><a class="btn btn-outline-warning">Xóa</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Ten{
+    <script src="~/Admin/Theme.js"></script>
+}
+

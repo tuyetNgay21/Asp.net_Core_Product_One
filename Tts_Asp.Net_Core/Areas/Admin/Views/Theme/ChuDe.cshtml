@@ -52,7 +52,7 @@
                             <span asp-validation-for="AvatarTheme" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Sửa Chủ Đề" class="btn btn-primary" />
+                            <input type="submit" value="Thêm Chủ Đề" class="btn btn-primary" />
                         </div>
                     </form>
                 </div>
@@ -101,8 +101,8 @@
         </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <h4 style="margin-top:100px;">Thêm Chủ Đề</h4>
-        <form action="/Them-chu-de">
+        <h4 style="margin-top:100px;">Sửa Chủ Đề</h4>
+        <form action="/SuaChuDe">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ThemeId" class="control-label"></label>
@@ -119,10 +119,15 @@
                 <input asp-for="IsTitle" class="form-control" value="" placeholder="Nội dung Tóm Tắt" id="NoiDungTieuDe" />
                 <span asp-validation-for="IsTitle" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="AvatarTheme" class="control-label"></label>
+                <input asp-for="AvatarTheme" class="form-control" value="" placeholder="Ảnh chủ đề" id="AnhChuDe" readonly="readonly"/>
+                <span asp-validation-for="AvatarTheme" class="text-danger"></span>
+            </div>
             <img id="AnhTieuDe" src="@ViewBag.ImgUrl" style="border-radius:100%;width:400px; z-index:20; height:auto; text-align:center;" />
             <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Sửa chủ đề" class="btn btn-primary" />
             </div>
         </form>
     </div>

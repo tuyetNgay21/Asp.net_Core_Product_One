@@ -9,7 +9,7 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsTheme : IIsTheme
     {
-        private readonly TTS_ASP_CoreContext db;
+        private readonly TTS_ASP_CoreContext db = new TTS_ASP_CoreContext();
         public RIsTheme()
         {
             try
@@ -72,7 +72,17 @@ namespace Tts_Asp.Net_Core.Models.Repository
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var a = db.IsTheme.Where(m => m.ThemeId == id).FirstOrDefault();
+                db.IsTheme.Remove(a);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+            }
         }
     }
 }

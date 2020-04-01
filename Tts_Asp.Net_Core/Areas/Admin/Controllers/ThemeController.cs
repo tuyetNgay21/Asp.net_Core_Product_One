@@ -17,6 +17,7 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
         [Route("chu-de")]
         public IActionResult ChuDe()
         {
+            ViewBag.ImgUrl = Meo;
             return View();
         }
 
@@ -36,13 +37,23 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
             }
         }
         [Route("SuaChuDe")]
-        public IActionResult EdiTheme(IsTheme th)
+        public IActionResult EditTheme(IsTheme th)
         {
-            if(ModelState.IsValid==false)
+            if(ModelState.IsValid==true)
             {
                 RIsTheme t = new RIsTheme();
                 t.Edit(th);
             }     
+            return Redirect("chu-de");
+        }
+        [Route("XoaChuDe")]
+        public IActionResult DeleteTheme(string id)
+        {
+            if (!id.Equals(null))
+            {
+                RIsTheme t = new RIsTheme();
+                t.Remove(Int32.Parse(id.Trim()));
+            }
             return Redirect("chu-de");
         }
         [HttpPost]
