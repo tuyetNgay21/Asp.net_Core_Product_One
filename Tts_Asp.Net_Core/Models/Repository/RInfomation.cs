@@ -14,6 +14,11 @@ namespace Tts_Asp.Net_Core.Models.Repository
             throw new NotImplementedException();
         }
 
+        public void Edit(Infomation _Th)
+        {
+            throw new NotImplementedException();
+        }
+
         public Infomation GetIsTheme(string Account)
         {
             throw new NotImplementedException();

@@ -9,17 +9,22 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsIntroduce : IIsIntroduce
     {
-        public void Add(IsIntroduce _Th)
+        public void Add(Infomation _Th)
         {
             throw new NotImplementedException();
         }
 
-        public IsIntroduce GetIsTheme(string Account)
+        public void Edit(Infomation _Th)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<IsIntroduce> GetIsThemes()
+        public Infomation GetIsTheme(string Account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Infomation> GetIsThemes()
         {
             throw new NotImplementedException();
         }

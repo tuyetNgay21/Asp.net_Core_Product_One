@@ -9,7 +9,7 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsTheme : IIsTheme
     {
-        private readonly TTS_ASP_CoreContext db = new TTS_ASP_CoreContext();
+        private readonly TTS_ASP_CoreContext db;
         public RIsTheme()
         {
             try

@@ -170,13 +170,11 @@
                         @foreach (var a in listTheme)
                         {
                             <tr>
-                                <td id="MaChuDe-@a.ThemeId">@a.ThemeId</td>
-                                <td id="TenChuDe-@a.ThemeId">@a.Isname</td>
-                                <td id="TieuDeChuDe-@a.ThemeId">@a.IsTitle</td>
-                                <td><img id="AnhChuDe-@a.ThemeId" src="@a.AvatarTheme" height="50" width="50" /></td>
-                                <td data-id="@a.ThemeId" class="Exit"><a class="btn btn-success">Sửa</a></td>
-                                <td data-id="@a.ThemeId" class="Delete"><a class="btn btn-outline-warning">Xóa</a></td>
-                            </tr>
+                                <td>@a.ThemeId</td>
+                                <td>@a.Isname</td>
+                                <td>@a.IsTitle</td>
+                                <td><img src="@a.AvatarTheme" height="50" width="50" /></td>
+                             </tr>
                         }
                     </tbody>
                 </table>

@@ -9,7 +9,22 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsPost : IIsPost
     {
+        private readonly TTS_ASP_CoreContext dbPost = new TTS_ASP_CoreContext();        
         public void Add(IsPost _Th)
+        {
+            try
+            {
+                dbPost.IsPost.Add(_Th);
+                dbPost.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Edit(IsPost _Th)
         {
             throw new NotImplementedException();
         }

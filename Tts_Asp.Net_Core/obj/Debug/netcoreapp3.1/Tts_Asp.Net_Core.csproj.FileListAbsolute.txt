@@ -279,3 +279,4 @@ F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Raz
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Tts_Asp.Net_Core.MvcApplicationPartsAssemblyInfo.cache
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Theme\ChuDe.cshtml.g.cs
 F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Species\LoaiChuDe.cshtml.g.cs
+F:\C#\asp.net core\Tts_Asp.Net_Core\Tts_Asp.Net_Core\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Port\ViewPort.cshtml.g.cs

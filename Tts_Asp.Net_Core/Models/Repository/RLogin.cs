@@ -61,5 +61,25 @@ namespace Tts_Asp.Net_Core.Models.Repository
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<IsLogin> GetIsThemes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IsLogin GetIsTheme(string Account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Edit(IsLogin _Th)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
