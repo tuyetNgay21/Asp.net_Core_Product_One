@@ -6,12 +6,12 @@ using Tts_Asp.Net_Core.Models.ConnectDataBase;
 
 namespace Tts_Asp.Net_Core.Models.InterFace
 {
-   public  interface IIsPost
+    public interface IIsVideo
     {
-        IEnumerable<Infomation> GetIsThemes();
-        Infomation GetIsTheme(string Account);
-        void Add(Infomation _Th);
-        void Edit(Infomation _Th);
+        IEnumerable<IsVideo> GetIsThemes();
+        IsVideo GetIsTheme(string Account);
+        void Add(IsVideo _Th);
+        void Edit(IsVideo _Th);
         void Remove(int id);
     }
 }

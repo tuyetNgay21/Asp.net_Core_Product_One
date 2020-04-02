@@ -6,12 +6,12 @@ using Tts_Asp.Net_Core.Models.ConnectDataBase;
 
 namespace Tts_Asp.Net_Core.Models.InterFace
 {
-   public  interface IIsPost
+   public interface IIsAdmin
     {
-        IEnumerable<Infomation> GetIsThemes();
-        Infomation GetIsTheme(string Account);
-        void Add(Infomation _Th);
-        void Edit(Infomation _Th);
+        IEnumerable<IsAdmin> GetIsThemes();
+        IsAdmin GetIsTheme(string Account);
+        void Add(IsAdmin _Th);
+        void Edit(IsAdmin _Th);
         void Remove(int id);
     }
 }

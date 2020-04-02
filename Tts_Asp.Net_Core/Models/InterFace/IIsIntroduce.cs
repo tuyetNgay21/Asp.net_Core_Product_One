@@ -8,9 +8,10 @@ namespace Tts_Asp.Net_Core.Models.InterFace
 {
     public interface IIsIntroduce
     {
-        IEnumerable<IsIntroduce> GetIsThemes();
-        IsIntroduce GetIsTheme(string Account);
-        void Add(IsIntroduce _Th);
+        IEnumerable<Infomation> GetIsThemes();
+        Infomation GetIsTheme(string Account);
+        void Add(Infomation _Th);
+        void Edit(Infomation _Th);
         void Remove(int id);
     }
 }

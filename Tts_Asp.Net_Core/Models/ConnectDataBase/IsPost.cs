@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Tts_Asp.Net_Core.Models.ConnectDataBase
 {
@@ -13,6 +11,7 @@ namespace Tts_Asp.Net_Core.Models.ConnectDataBase
         public string AvataIndex { get; set; }
         public string Content { get; set; }
         public int? ViewPost { get; set; }
+        public bool Deleted { get; set; }
         public int? SpeciesId { get; set; }
 
         public virtual IsSpecies Species { get; set; }

@@ -12,8 +12,9 @@ namespace Tts_Asp.Net_Core.Models.Repository
         private readonly TTS_ASP_CoreContext dbs = new TTS_ASP_CoreContext();
         public void Add(IsSpecies _Th)
         {
+            
             try
-            {                
+            {
                 dbs.IsSpecies.Add(_Th);
                 dbs.SaveChanges();
             }
@@ -21,7 +22,7 @@ namespace Tts_Asp.Net_Core.Models.Repository
             {
                 throw new NotImplementedException();
             }
-           
+
         }
 
         public void Edit(IsSpecies _Th)

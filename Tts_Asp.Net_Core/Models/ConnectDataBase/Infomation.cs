@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Tts_Asp.Net_Core.Models.ConnectDataBase
 {
@@ -15,6 +13,5 @@ namespace Tts_Asp.Net_Core.Models.ConnectDataBase
         public bool Deleted { get; set; }
 
         public virtual IsLogin InfomationNavigation { get; set; }
-
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Tts_Asp.Net_Core.Models.ConnectDataBase
 {
@@ -11,15 +8,18 @@ namespace Tts_Asp.Net_Core.Models.ConnectDataBase
         public IsSpecies()
         {
             IsPost = new HashSet<IsPost>();
+            IsVideo = new HashSet<IsVideo>();
         }
-        [Key]
+
         public int SpeciesId { get; set; }
         public string Isname { get; set; }
         public string IsTitle { get; set; }
         public string AvatarSpecies { get; set; }
+        public bool Deleted { get; set; }
         public int? ThemeId { get; set; }
 
         public virtual IsTheme Theme { get; set; }
         public virtual ICollection<IsPost> IsPost { get; set; }
+        public virtual ICollection<IsVideo> IsVideo { get; set; }
     }
 }
