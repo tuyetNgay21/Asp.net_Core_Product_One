@@ -1,7 +1,133 @@
-﻿
+﻿@using Tts_Asp.Net_Core.Models.ConnectDataBase
+@model List<IsPost>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "ViewPort";
     Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+    int tongsotrang = (int)ViewBag.tongTrang;
+    int tranghientai = (int)ViewBag.tranghientai;
+    int congmot = tranghientai + 1;
+    int trumot = tranghientai - 1;
 }
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div style="width:30%; float:left;">
+                <ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Lọc dữ liệu theo
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/ViewPost?idSearch=1">Ngày đăng gần đây nhất</a>
+                            <a class="dropdown-item" href="/ViewPost?idSearch=2">Lượt xem nhiều nhất</a>
+                            <a class="dropdown-item" href="/ViewPost?idSearch=3">Chưa xóa</a>
+                            <a class="dropdown-item" href="/ViewPost?idSearch=4">Đã xóa</a>
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="number" id="IdThemeSearch" placeholder="Mã Chủ đề" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0 IdThemeSearch" type="submit">Tìm Kiếm</button>
+                            </form>
+                            <form class="form-inline">
+                                <button class="btn btn-outline-warning my-2 my-sm-0 contentThemeSearch" type="submit">Tìm Kiếm</button>
+                                <input class="form-control mr-sm-2" type="search" id="contentThemeSearch" placeholder="Tiêu đề bài viết" aria-label="Search">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        @foreach (var iiiiiii in Model)
+        {
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                <div class="card mb-2">
+                    @if (iiiiiii.Title.Length < 10)
+                    {
+                        <div class="card-title" style="font-size:20px;"><a href="#">@iiiiiii.Title</a></div>
+                    }
+                    else
+                    {
+                        <div class="card-title" style="font-size:20px;"><a href="#">@iiiiiii.Title.Substring(0, 10)</a></div>
+                    }
+                    <div class="row no-gutters">
+                        <div class="col-md-5">
+                            <img src="@iiiiiii.AvataIndex" style="height:auto" class="card-img" alt="@iiiiiii.Title">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                @if (iiiiiii.Content.Length < 30)
+                                {
+                                    <div class="card-text" style="font-size:15px;">@iiiiiii.Content.Replace("<p>", "").Replace("<", "").Replace(">", "").Replace("/", "-").Replace("<img", "").Replace("src", "")</div>
+                                }
+                                else
+                                {
+                                    <div class="card-text" style="font-size:15px;">@iiiiiii.Content.Replace("<p>", "").Substring(0, 30)</div>
+                                }
+                                <p class="card-text"><small class="text-muted">Ngày Cập Nhật : @iiiiiii.DayInPost</small></p>
+                                <span class="card-text" style="float:left;"><small class="text-muted">Đã Xóa : @iiiiiii.Deleted<br /> Lượt Xem : @iiiiiii.ViewPost<br /> Mã Chủ đề : @iiiiiii.SpeciesId</small></span>
+                            </div>
+                        </div>
+                        <p style="width:100%; text-align:center;">
+                            <input type="submit" class="btn btn-outline-success xemBaiDang" data-id="@iiiiiii.SpeciesId" value="Xem" />
+                            <input type="submit" class="btn btn-outline-dark suaBaiDang" data-id="@iiiiiii.SpeciesId" style="margin: 0 10%;" value="Sửa" />
+                            <input type="submit" class="btn btn-outline-warning XoaBaiDang" data-id="@iiiiiii.SpeciesId" value="Xóa" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    @if (trumot < 1)
+                    {
+                        <li class="page-item" style="display:none">
+                            <a class="page-link" href="/ViewPost?trangso=@trumot" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/ViewPost?trangso=@trumot" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
 
+                    @if (tongsotrang == 0)
+                    {
+                        <li class="page-item"><a class="page-link" href="/ViewPost?trangso=1">1</a></li>
+                    }
+                    else
+                    {
+                        for (int i = 0; i < tongsotrang; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="/ViewPost?trangso=@i">@i</a></li>
+                        }
+                    }
+                    @if (congmot >= tongsotrang)
+                    {
+                        <li class="page-item" style="display: none">
+                            <a class="page-link" href="/ViewPost?trangso=@congmot" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/ViewPost?trangso=@congmot" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
 
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+@section ten{
+    <script src="~/Admin/Admin.js"></script>
+}

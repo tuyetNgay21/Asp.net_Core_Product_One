@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Tts_Asp.Net_Core.Models.Check;
 using Tts_Asp.Net_Core.Models.ConnectDataBase;
 using Tts_Asp.Net_Core.Models.Repository;
 
@@ -17,7 +18,7 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
         [Route("AddPost")]
         public IActionResult AddPort(IsPost th)
         {
-            if (th.SpeciesId != null || th.Title != null || th.Content!=null ||th.AvataIndex!=null)
+            if (th.SpeciesId != null || th.Title != null || th.Content != null || th.AvataIndex != null)
             {
                 RIsPost r = new RIsPost();
                 r.Add(th);
@@ -26,13 +27,26 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
             {
                 ViewBag.postImg = postImg;
             }
-            
+
             return View();
-        } 
+        }
+        
         [Route("ViewPost")]
-        public IActionResult ViewPort()
+        public IActionResult ViewPort(int idSearch, int numberSearch, string contentSearch, int trangso)
         {
-            return View();
+            var listTheme = ViewPosrt.DepTrai(idSearch, numberSearch, contentSearch);
+            ViewBag.tongTrang = (listTheme.Count() / 10)+1;
+            ViewBag.tranghientai = trangso;
+            if(listTheme.Count< (trangso+1)*10)
+            {
+                listTheme = listTheme.GetRange(trangso * 10,listTheme.Count()-(trangso * 10));
+            }
+            else
+            {
+                listTheme = listTheme.GetRange(trangso * 10, 10);
+            }
+           
+            return View(listTheme);
         }
         [Route("ChangePost")]
         public IActionResult ChangePost()
