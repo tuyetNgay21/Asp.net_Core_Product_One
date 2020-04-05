@@ -33,6 +33,7 @@ namespace Tts_Asp.Net_Core.Models.ConnectDataBase
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Server=WT436;Database=TTS_ASP_Core;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer("Server=DESKTOP-J4QTH4N\\SQLEXPRESS;Database=TTS_ASP_Core;Trusted_Connection=True;");
             }
         }
 

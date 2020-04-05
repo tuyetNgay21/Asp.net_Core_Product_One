@@ -9,23 +9,12 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RLogin : ILogin
     {
-        private readonly TTS_ASP_CoreContext db;
-        public RLogin()
-        {
-            try
-            {
-                db = new TTS_ASP_CoreContext();
-            }
-            catch
-            {
-                throw new NotImplementedException();
-            }
-        }
+        private readonly TTS_ASP_CoreContext dbLogin = new TTS_ASP_CoreContext();
         public IEnumerable<IsLogin> GetIsLogins()
         {
             try
             {
-                IEnumerable<IsLogin> lg = db.IsLogin;
+                IEnumerable<IsLogin> lg = dbLogin.IsLogin;
                 return lg;
             }
             catch
@@ -37,8 +26,8 @@ namespace Tts_Asp.Net_Core.Models.Repository
         {
             try
             {
-                db.IsLogin.Add(_LG);
-                db.SaveChanges();
+                dbLogin.IsLogin.Add(_LG);
+                dbLogin.SaveChanges();
             }
             catch
             {
@@ -49,27 +38,13 @@ namespace Tts_Asp.Net_Core.Models.Repository
         {
             try
             {
-                IsLogin lo = db.IsLogin.Find(Account);
+                IsLogin lo = dbLogin.IsLogin.Find(Account);
                 return lo;
             }
             catch
             {
                 throw new NotImplementedException();
             }
-        }        
-        public void Remove(string Account)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<IsLogin> GetIsThemes()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IsLogin GetIsTheme(string Account)
-        {
-            throw new NotImplementedException();
         }
 
         public void Edit(IsLogin _Th)
@@ -80,6 +55,41 @@ namespace Tts_Asp.Net_Core.Models.Repository
         public void Remove(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public void EditDelete(string _Th)
+        {
+            try
+            {
+                var lo = dbLogin.IsLogin.Where(m => m.Account == _Th).FirstOrDefault();
+                if(lo.Deleted==true)
+                {
+                    lo.Deleted = false;
+                }
+                else
+                {
+                    lo.Deleted = true;
+                }
+                dbLogin.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void EditQuyen(string _Th)
+        {
+            var lo = dbLogin.IsLogin.Where(m => m.Account == _Th).FirstOrDefault();
+            if (lo.Decentralization == true)
+            {
+                lo.Decentralization = false;
+            }
+            else
+            {
+                lo.Decentralization = true;
+            }
+            dbLogin.SaveChanges();
         }
     }
 }

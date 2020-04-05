@@ -9,7 +9,7 @@ namespace Tts_Asp.Net_Core.Models.InterFace
    public interface IIsNavbar
     {
         IEnumerable<IsNavbar> GetIsThemes();
-        IsNavbar GetIsTheme(string Account);
+        IsNavbar GetIsTheme();
         void Add(IsNavbar _Th);
         void Edit(IsNavbar _Th);
         void Remove(int id);

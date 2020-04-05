@@ -9,7 +9,8 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
     [Area("Admin")]
     public class MapController : Controller
     {
-        public IActionResult Index()
+        [Route("MapAdmin")]
+        public IActionResult MapAdmin()
         {
             return View();
         }

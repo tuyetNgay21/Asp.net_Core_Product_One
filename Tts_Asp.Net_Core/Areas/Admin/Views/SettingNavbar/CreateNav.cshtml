@@ -1,0 +1,302 @@
+﻿@model Tts_Asp.Net_Core.Models.ConnectDataBase.IsNavbar
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "CreateNav";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+}
+<h1>Tạo mới trên thanh trượt menu Home</h1>
+<hr />
+<table class="table table-sm">
+    <tbody>
+        <tr>
+            <td rowspan="10">
+                <form action="CreateNavPro">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Image1" class="control-label">Ảnh NavBar 1</label>
+                        <input asp-for="Image1" class="form-control"  readonly="readonly"/>
+                        <span asp-validation-for="Image1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage1" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 1</label>
+                        <input asp-for="LinkImage1" class="form-control" />
+                        <span asp-validation-for="LinkImage1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image2" class="control-label">Ảnh NavBar 2</label>
+                        <input asp-for="Image2" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Image2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage2" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 2</label>
+                        <input asp-for="LinkImage2" class="form-control" />
+                        <span asp-validation-for="LinkImage2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image3" class="control-label">Ảnh NavBar 3</label>
+                        <input asp-for="Image3" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Image3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage3" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 3</label>
+                        <input asp-for="LinkImage3" class="form-control" />
+                        <span asp-validation-for="LinkImage3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image4" class="control-label">Ảnh NavBar 4</label>
+                        <input asp-for="Image4" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image4" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage4" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 4</label>
+                        <input asp-for="LinkImage4" class="form-control" />
+                        <span asp-validation-for="LinkImage4" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image5" class="control-label">Ảnh NavBar 5</label>
+                        <input asp-for="Image5" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image5" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage5" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 5</label>
+                        <input asp-for="LinkImage5" class="form-control" />
+                        <span asp-validation-for="LinkImage5" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image6" class="control-label">Ảnh NavBar 6</label>
+                        <input asp-for="Image6" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image6" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage6" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 6</label>
+                        <input asp-for="LinkImage6" class="form-control" />
+                        <span asp-validation-for="LinkImage6" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image7" class="control-label">Ảnh NavBar 7</label>
+                        <input asp-for="Image7" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image7" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage7" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 7</label>
+                        <input asp-for="LinkImage7" class="form-control" />
+                        <span asp-validation-for="LinkImage7" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image8" class="control-label">Ảnh NavBar 8</label>
+                        <input asp-for="Image8" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image8" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage8" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 8</label>
+                        <input asp-for="LinkImage8" class="form-control" />
+                        <span asp-validation-for="LinkImage8" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image9" class="control-label">Ảnh NavBar 9</label>
+                        <input asp-for="Image9" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image9" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage9" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 9</label>
+                        <input asp-for="LinkImage9" class="form-control" />
+                        <span asp-validation-for="LinkImage9" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image10" class="control-label">Ảnh NavBar 10</label>
+                        <input asp-for="Image10" class="form-control" readonly="readonly"/>
+                        <span asp-validation-for="Image10" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LinkImage10" class="control-label">Đường Dẫn Bài Viết Cho Ảnh 10</label>
+                        <input asp-for="LinkImage10" class="form-control" />
+                        <span asp-validation-for="LinkImage10" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Tạo NavBar mới" class="btn btn-primary" />
+                    </div>
+                </form>
+            </td>
+            <td>
+                <h4>Tải Ảnh Navbar 1</h4>
+                <form action="/TaiNav?id=1" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-success">Tải ảnh 1 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image1" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 2</h4>
+                <form action="/TaiNav?id=2" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 2 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image2" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 3</h4>
+                <form action="/TaiNav?id=3" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 3 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image3" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 4</h4>
+                <form action="/TaiNav?id=4" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 4 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image4" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 5</h4>
+                <form action="/TaiNav?id=5" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 5 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image5" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 6</h4>
+                <form action="/TaiNav?id=6" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 6 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image6" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 7</h4>
+                <form action="/TaiNav?id=7" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 7 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image7" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 8</h4>
+                <form action="/TaiNav?id=8" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 8 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image8" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 9</h4>
+                <form action="/TaiNav?id=9" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 9 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image9" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Tải Ảnh Navbar 10</h4>
+                <form action="/TaiNav?id=10" method="post" enctype="multipart/form-data" style="text-align:center">
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input class="form-control" id="file" type="file" name="file" />
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Tải ảnh 10 Lên</button>
+                    </div>
+                </form>
+            </td>
+            <td style="width:16.625em; height:6.25em">
+                <img src="@Model.Image10" style="width:16.625em; height:6.25em; z-index:20;text-align:center;" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div>
+    <a asp-action="Index">Quay về HomAdmin</a>
+</div>
+

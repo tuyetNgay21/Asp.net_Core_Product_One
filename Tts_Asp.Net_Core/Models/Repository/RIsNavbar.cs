@@ -9,9 +9,31 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RIsNavbar : IIsNavbar
     {
+        private readonly TTS_ASP_CoreContext dbIsNavbar = new TTS_ASP_CoreContext();
         public void Add(IsNavbar _Th)
-        {
-            throw new NotImplementedException();
+        {            
+            try
+            {
+                var kk = dbIsNavbar.IsNavbar.Where(m => m.Deleted == true).ToList();
+                if(kk.Count!=0)
+                { 
+                    foreach (var k in kk)
+                    {
+                        k.Deleted = false;
+                    }
+                }
+                
+                dbIsNavbar.SaveChanges();
+
+                IsNavbar nav = _Th;
+                nav.Deleted = true;
+                dbIsNavbar.Add(nav);
+                dbIsNavbar.SaveChanges();                
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void Edit(IsNavbar _Th)
@@ -19,9 +41,16 @@ namespace Tts_Asp.Net_Core.Models.Repository
             throw new NotImplementedException();
         }
 
-        public IsNavbar GetIsTheme(string Account)
+        public IsNavbar GetIsTheme()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return dbIsNavbar.IsNavbar.Where(m => m.Deleted==true).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public IEnumerable<IsNavbar> GetIsThemes()

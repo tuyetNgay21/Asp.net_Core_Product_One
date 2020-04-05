@@ -1,0 +1,84 @@
+﻿@using Tts_Asp.Net_Core.Models.ConnectDataBase
+@model Infomation
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "OverviewAccount";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+}
+@if (Model==null)
+{
+    <h5>Tài khoản Này chưa có thông tin</h5>
+}
+else
+{
+    <form action="/EditInfomation">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="InfomationId" class="control-label"></label>
+            <input asp-for="InfomationId" class="form-control"  readonly="readonly"/>
+            <span asp-validation-for="InfomationId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsName" class="control-label"></label>
+            <input asp-for="IsName" class="form-control" />
+            <span asp-validation-for="IsName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsAge" class="control-label"></label>
+            <input asp-for="IsAge" class="form-control" />
+            <span asp-validation-for="IsAge" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IsAddress" class="control-label"></label>
+            <input asp-for="IsAddress" class="form-control" />
+            <span asp-validation-for="IsAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Deleted" class="control-label"></label>
+            <input asp-for="Deleted" class="form-control" />
+            <span asp-validation-for="Deleted" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Sửa thông tin tài khoản" class="btn btn-primary" />
+        </div>
+    </form>
+}
+<div class="card">
+    <div class="card-header" style="width:100%;">
+        <h5>Tất Cả tài khoản đang có</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <td>Tài Khoản</td>
+                    <td>Quyền</td>
+                    <td>Email</td>
+                    <td>Đã Xóa</td>
+                    <td>Xem thông tin</td>
+                    <td>Xóa Hoặc khôi phục tài khoản</td>
+                    <td>Admin hoặc User tài khoản</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    TTS_ASP_CoreContext db = new TTS_ASP_CoreContext();
+                    var listTheme = db.IsLogin.ToList();
+                }
+                @foreach (var ik in listTheme)
+                {
+                    <tr>
+                        <td>@ik.Account</td>
+                        <td>@ik.Decentralization</td>
+                        <td>@ik.Email</td>
+                        <td>@ik.Deleted</td>
+                        <td><a href="/OverviewAccount?lo=@ik.Account" class="btn btn-outline-success">Xem</a></td>
+                        <td><a href="/UpdateDeleteAccount?lo=@ik.Account" class="btn btn-outline-warning">Đổi</a></td>
+                        <td><a href="/UpDateAdminLogin?lo=@ik.Account" class="btn btn-outline-danger">Đổi</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -9,6 +9,7 @@ namespace Tts_Asp.Net_Core.Models.Repository
 {
     public class RInfomation : IInfomation
     {
+      private  TTS_ASP_CoreContext dbInfomation = new TTS_ASP_CoreContext();
         public void Add(Infomation _Th)
         {
             throw new NotImplementedException();
@@ -16,7 +17,16 @@ namespace Tts_Asp.Net_Core.Models.Repository
 
         public void Edit(Infomation _Th)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Infomation dg = _Th;
+                dbInfomation.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
+            
         }
 
         public Infomation GetIsTheme(string Account)

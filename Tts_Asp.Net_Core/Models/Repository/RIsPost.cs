@@ -26,7 +26,22 @@ namespace Tts_Asp.Net_Core.Models.Repository
 
         public void Edit(IsPost _Th)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var It = dbPost.IsPost.Where(m => m.PostId == _Th.PostId).FirstOrDefault();
+                It.Content = _Th.Content;
+                It.DayInPost = DateTime.Now;
+                It.AvataIndex = _Th.AvataIndex;
+                It.Title = _Th.Title;
+                It.Deleted = _Th.Deleted;
+                It.SpeciesId = _Th.SpeciesId;
+                It.ViewPost = _Th.ViewPost;
+                dbPost.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public IsPost GetIsTheme(string Account)

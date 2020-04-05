@@ -23,25 +23,7 @@ namespace Tts_Asp.Net_Core.Models.Check
                 contentSearch = contentSearchSave;
                 if (idSearch != 0)
                 {
-                    if (idSearch == 1)
-                    {
-                        listTheme = listTheme.OrderByDescending(m => m.DayInPost).ToList();
-                    }
-                    else if (idSearch == 2)
-                    {
-                        listTheme = listTheme.OrderByDescending(m => m.ViewPost).ToList();
-                    }
-                    else if (idSearch == 3)
-                    {
-                        listTheme = listTheme.Where(m => m.Deleted == false).ToList();
-                    }
-                    else if (idSearch == 4)
-                    {
-                        listTheme = listTheme.Where(m => m.Deleted == true).ToList();
-                    }
-                    else
-                    {
-                    }
+                    listTheme = traRaDanhSachGiaTri(listTheme, idSearch);
                 }
                 else if (numberSearch != 0)
                 {
@@ -56,25 +38,7 @@ namespace Tts_Asp.Net_Core.Models.Check
             {
                 if (idSearch != 0)
                 {
-                    if (idSearch == 1)
-                    {
-                        listTheme = listTheme.OrderByDescending(m => m.DayInPost).ToList();
-                    }
-                    else if (idSearch == 2)
-                    {
-                        listTheme = listTheme.OrderByDescending(m => m.ViewPost).ToList();
-                    }
-                    else if (idSearch == 3)
-                    {
-                        listTheme = listTheme.Where(m => m.Deleted == false).ToList();
-                    }
-                    else if (idSearch == 4)
-                    {
-                        listTheme = listTheme.Where(m => m.Deleted == true).ToList();
-                    }
-                    else
-                    {
-                    }
+                    listTheme= traRaDanhSachGiaTri(listTheme, idSearch);
                 }
                 else if (numberSearch != 0)
                 {
@@ -87,6 +51,29 @@ namespace Tts_Asp.Net_Core.Models.Check
                 idSearchSave = idSearch;
                 numberSearchSave = numberSearch;
                 contentSearchSave = contentSearch;
+            }
+            return listTheme;
+        }
+        public static List<IsPost> traRaDanhSachGiaTri(List<IsPost> listTheme, int idSearch)
+        {
+            if (idSearch == 1)
+            {
+                listTheme = listTheme.OrderByDescending(m => m.DayInPost).ToList();
+            }
+            else if (idSearch == 2)
+            {
+                listTheme = listTheme.OrderByDescending(m => m.ViewPost).ToList();
+            }
+            else if (idSearch == 3)
+            {
+                listTheme = listTheme.Where(m => m.Deleted == false).ToList();
+            }
+            else if (idSearch == 4)
+            {
+                listTheme = listTheme.Where(m => m.Deleted == true).ToList();
+            }
+            else
+            {
             }
             return listTheme;
         }

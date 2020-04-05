@@ -8,10 +8,12 @@ namespace Tts_Asp.Net_Core.Models.InterFace
 {
     public interface ILogin
     {
-        IEnumerable<IsLogin> GetIsThemes();
-        IsLogin GetIsTheme(string Account);
+        IEnumerable<IsLogin> GetIsLogins();
+        IsLogin GetIsLogin(string Account);
         void Add(IsLogin _Th);
         void Edit(IsLogin _Th);
+        void EditDelete(string _Th);
+        void EditQuyen(string _Th);
         void Remove(int id);
     }
 }

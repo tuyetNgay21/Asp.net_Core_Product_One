@@ -37,8 +37,22 @@ namespace Tts_Asp.Net_Core
                 MvcOptions.EnableEndpointRouting = false;
 
             });
+            //khai bao Injection
             services.AddControllersWithViews();
             services.AddTransient<ILogin, RLogin>();
+            services.AddTransient<IInfomation, RInfomation>();
+            services.AddTransient<IIsAdmin, RIsAdmin>();
+            services.AddTransient<IIsIntroduce, RIsIntroduce>();
+            services.AddTransient<IIsNavbar, RIsNavbar>();
+            services.AddTransient<IIsPost, RIsPost>();
+            services.AddTransient<IIsSpecies, RIsSpecies>();
+            services.AddTransient<IIsTheme, RIsTheme>();
+            services.AddTransient<IIsVideo, RIsVideo>();
+            services.AddTransient<IMenuFooter, RIMenuFooter>();
+            services.AddTransient<IMenuTop1, RIMenuTop1>();
+            services.AddTransient<IMenuTop2, RIMenuTop2>();
+           // services.AddTransient<ILogin, RLogin>();
+           //services.AddTransient<ILogin, RLogin>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,7 +80,7 @@ namespace Tts_Asp.Net_Core
                 routes.MapRoute(
                         name: "default",
                         template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(
+                routes.MapRoute(//khai bao ereas admin
                          name: "Admin",
                          template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });

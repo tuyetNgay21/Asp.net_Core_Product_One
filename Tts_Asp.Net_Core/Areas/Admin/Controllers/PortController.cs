@@ -48,15 +48,39 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
            
             return View(listTheme);
         }
+        public static int MabaiViet;
         [Route("ChangePost")]
-        public IActionResult ChangePost()
+        public IActionResult ChangePost(int maBaiViet)
         {
-            return View();
+            if(MabaiViet==0)
+            {
+                MabaiViet = maBaiViet;
+            }
+            else
+            {
+                maBaiViet = MabaiViet;
+            }                        
+            using (TTS_ASP_CoreContext db = new TTS_ASP_CoreContext())
+            {
+                var model = db.IsPost.Where(m => m.PostId == maBaiViet).FirstOrDefault();
+                if (postImg == "")
+                {
+                    ViewBag.postImg = model.AvataIndex;
+                 }
+                else
+                {
+                    ViewBag.postImg = postImg;
+                }
+                return View(model);
+            }                
         }
-        [Route("ClosePost")]
-        public IActionResult ClosePost()
+
+        [Route("ChangeDatePost")]
+        public IActionResult ChangeDatePost(IsPost Rip)
         {
-            return View();
+            RIsPost rip = new RIsPost();
+            rip.Edit(Rip);
+            return Redirect("ChangePost");            
         }
         [Route("TaiPortImage")]
         public IActionResult ImageUpload(IFormFile file)
@@ -72,6 +96,23 @@ namespace Tts_Asp.Net_Core.Areas.Admin.Controllers
             else
             {
                 return View("AddPost");
+            }
+        }
+
+        [Route("ChangePortImage")]
+        public IActionResult ImageUpload2(IFormFile file)
+        {
+            if (file != null && file.Length > 0)
+            {
+                var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + file.FileName;
+                var file1 = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/ImagePost", fileName);
+                file.CopyToAsync(new FileStream(file1, FileMode.Create));
+                postImg = "/ImagePost/" + fileName;
+                return Redirect("ChangePost");
+            }
+            else
+            {
+                return View("ChangePost");
             }
         }
     }

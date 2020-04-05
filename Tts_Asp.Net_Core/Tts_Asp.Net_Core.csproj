@@ -23,11 +23,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\User\Controllers\" />
+    <Folder Include="Areas\HangHoa\Data\" />
+    <Folder Include="Areas\HangHoa\Views\" />
+    <Folder Include="Areas\Ncc\Controllers\" />
+    <Folder Include="Areas\Ncc\Data\" />
+    <Folder Include="Areas\Ncc\Models\" />
+    <Folder Include="Areas\Ncc\Views\" />
     <Folder Include="Areas\User\Views\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\ImgAdmin\" />
     <Folder Include="wwwroot\ImagePost\" />
+    <Folder Include="wwwroot\NavImg\" />
     <Folder Include="wwwroot\Video\" />
   </ItemGroup>
 

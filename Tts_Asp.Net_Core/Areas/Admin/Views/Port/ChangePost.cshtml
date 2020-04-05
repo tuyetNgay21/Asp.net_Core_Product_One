@@ -1,0 +1,110 @@
+﻿@using Tts_Asp.Net_Core.Models.ConnectDataBase;
+@model IsPost
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddPort";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout_admin.cshtml";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/ckeditor/ckeditor.js"></script>
+@*Tải ảnh lên để làm ảnh đại diện*@
+<h4>Tải Ảnh Đại Diện Cho Bài viết này</h4>
+<form action="/ChangePortImage" method="post" enctype="multipart/form-data">
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <input class="form-control" id="file" type="file" name="file" />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Tải Lên</button>
+    </div>
+</form>
+<img src="@ViewBag.postImg" style="border-radius:100%;width:400px; z-index:20; height:auto; text-align:center;" />
+<br />
+<div id="selectThemeMenu" style="margin:30px 30%;">
+    <select id="LoaiChuDe">
+        <option>Lựa chọn loại chủ đề hiển thị </option>
+        @{
+            var db = new TTS_ASP_CoreContext();
+            var LoaiChuDe = db.IsSpecies.Where(m => m.Deleted == false).ToList();
+            foreach (var i in LoaiChuDe)
+            {
+                <option value="@i.SpeciesId">
+                    @i.Isname
+                </option>
+            }
+        }
+    </select>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            @*Nhập nội dung bài viết*@
+            <textarea id="editor" class="form-control" rows="4" required>
+               @Model.Content
+            </textarea>
+            <button class="btn btn-outline-success ViewCkEditor">XEM</button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <hr />
+            <label style="text-align:center;"><b><i>Trạng Thái Hiển Thị Ra</i></b></label>
+            <div id="ViewDataCKEditor">
+
+            </div>
+            <hr />
+            @*Update database*@
+            <form action="/ChangeDatePost">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label asp-for="PostId" class="control-label"></label>
+                        <input asp-for="PostId" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="PostId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DayInPost" class="control-label"></label>
+                        <input asp-for="DayInPost" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="DayInPost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AvataIndex" class="control-label"></label>
+                        <input asp-for="AvataIndex" class="form-control" value="@ViewBag.postImg" readonly="readonly" />
+                        <span asp-validation-for="AvataIndex" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" id="Content" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ViewPost" class="control-label"></label>
+                        <input asp-for="ViewPost" id="SpeciesId" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="ViewPost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Deleted" class="control-label"></label>
+                        <input asp-for="Deleted" id="SpeciesId" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="Deleted" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SpeciesId" class="control-label"></label>
+                        <input asp-for="SpeciesId" id="SpeciesId" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="SpeciesId" class="text-danger"></span>
+                    </div>
+                    <button class="btn btn-outline-success SaveCkEditor">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Ten{
+    <script src="~/Admin/Theme.js"></script>
+    <script src="~/Admin/Admin.js"></script>
+}
+
+
+
